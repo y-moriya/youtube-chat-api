@@ -71,7 +71,7 @@ class YoutubeLiveChat extends EventEmitter {
   private async getChatMessages(): Promise<void> {
     try {
       const response: AxiosResponse<IYoutubeLiveChatResponse|any> = await axios({
-        url: 'https://www.googleapis.com/youtube/v3/liveChat/meessages?' +
+        url: 'https://www.googleapis.com/youtube/v3/liveChat/messages?' +
         `liveChatId=${this.liveChatId}&part=snippet,authorDetails&key=${this.APIKey}&` +
         (this.nextPage !== '' ? `pageToken=${this.nextPage}` : ''),
         method: 'GET',
